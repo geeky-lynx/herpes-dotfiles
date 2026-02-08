@@ -1,8 +1,13 @@
-solopasha/hyprland
-?/hyprpaper
-?/hyprlock
-?/helix
-?/waybar
+solopasha/hyprland (old)
+lionheartp/Hyprland
+	/hyprpaper
+	/hyprlock
+	/waybar
+helix
 ?/
 steam
 firefox
+zinix01/linux-wifi-hotspot
+erikreider/SwayNotificationCenter
+lihaohong/yazi
+scottames/vicinae
