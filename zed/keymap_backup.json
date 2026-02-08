@@ -20,9 +20,9 @@
       "ctrl-;": "editor::GoToDefinition",
       "ctrl-shift-;": "editor::GoToDefinitionSplit",
       "ctrl-i": "search::SelectNextMatch",
-      "ctrl-shift-i": "search::SelectPreviousMatch",
+      "ctrl-shift-i": "search::SelectPrevMatch",
       "ctrl-'": "editor::GoToDiagnostic",
-      "ctrl-shift-'": "editor::GoToPreviousDiagnostic"
+      "ctrl-shift-'": "editor::GoToPrevDiagnostic"
     }
   },
   {

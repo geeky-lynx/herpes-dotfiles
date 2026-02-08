@@ -9,7 +9,7 @@
 {
   "vim_mode": false,
   "features": {
-    "edit_prediction_provider": "none"
+    "inline_completion_provider": "none"
   },
   "theme": "Catppuccin Mocha",
   "ui_font_size": 16,
