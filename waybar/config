@@ -7,7 +7,8 @@
 
     // "modules-left": ["hyprland/workspaces"],
     "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["hyprland/window"],
+    // "modules-center": ["hyprland/window"],
+    "modules-center": [],
     "modules-right": ["mpris", "tray", "hyprland/language", "pulseaudio", "network", "bluetooth", "battery", "clock"],
     // "modules-right": ["tray", "pulseaudio", "network", "cpu", "memory", "battery", "clock"],
     // TODO: config mpris or mpd
@@ -16,18 +17,22 @@
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": false,
-        "format": "{name} {icon}",
+        "format": "{name}{icon}",
+	      // "format": "{name}",
         "format-icons": {
-            "urgent": "",
-            "active": "",
-            "default": ""
+            "urgent": " ",
+            "active": "",
+            "default": ""
+            // "active": "",
+            // "default": ""
             //"1:web": "",
             //"2:code": "",
             //"3:term": "",
             //"4:work": "",
             //"5:music": "",
             //"6:docs": "",
-        }
+        },
+	      "show-special": true
     },
 
     "hyprland/language": {
@@ -137,14 +142,19 @@
 
     "mpris": {
         "interval": 1,
-        "format": "{status_icon} {title} \udb81\udf5a",
+        "format": "{status_icon} {title} {player_icon}",
         // "format-paused": "{status_icon} {title} \udb81\udf5a ",
         "tooltip-format": "{player} ({status_icon}): {dynamic}",
         //"dynamic-order": ["title", "artist", "position", "length"],
         "status-icons": {
             "paused": "\udb80\udfe4",
             "playing": "\udb81\udc0a"
-        }
+        },
+        "player-icons": {
+            "default": "\udb81\udf5a",
+            "firefox": "\ue745"
+        },
+        "format-len": 150
     },
 
     // Customs

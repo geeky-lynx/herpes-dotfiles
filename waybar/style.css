@@ -37,13 +37,21 @@ tooltip {
     border-top: 2px solid transparent;
 }
 
+#workspaces button.active {
+    /*background: @text;*/
+    background: @overlay2;
+    color: @teal;
+}
+
 #workspaces button.focused {
-    color: #c9545d;
+    /* color: #c9545d; */
+    color: #ff0000;
     border-top: 2px solid #c9545d;
 }
 
 #workspaces button.urgent {
     color: @red;
+    background: @yellow;
 }
 
 #mode {
@@ -63,8 +71,8 @@ tooltip {
 #tray,
 #mode,
 #mpris {
-    padding: 0 3px;
-    margin: 0 3px;
+    padding: 0 5px;
+    margin: 0 5px;
 }
 
 #clock {
