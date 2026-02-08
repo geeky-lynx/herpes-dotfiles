@@ -1,2 +1,7 @@
   # Theme for Helix
 theme = "catppuccin_mocha"
+
+[keys.normal]
+C-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+C-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+# C-j = ["extend_line_below", "split_selection_on_newline", "rotate_selection_contents_forward", "remove_primary_selection", "rotate_selections_backward"]
