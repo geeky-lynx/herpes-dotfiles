@@ -17,5 +17,3 @@ hyprctl notify 5 4500 "rgb(a6e3a1)" " Blue light filter disabled"
 echo "\a"
 exit
 
-# iseljenje do 5. jula
-# ponovno useljenje do 28. avgusta

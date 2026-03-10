@@ -2,6 +2,7 @@
 HYPRGAMEMODE=$(hyprctl getoption animations:enabled | awk 'NR==1{print $2}')
 if [ "$HYPRGAMEMODE" = 1 ] ; then
     hyprctl notify 1 5000 "rgb(8dc4de)" "Game mode is enabled"
+    #                          ^^^^^^ catppuccin mocha blue
     hyprctl --batch "\
         keyword animations:enabled 0;\
         keyword decoration:drop_shadow 0;\
@@ -14,4 +15,5 @@ if [ "$HYPRGAMEMODE" = 1 ] ; then
     exit
 fi
 hyprctl notify 1 5000 "rgb(8dc4de)" "Game mode is disabled"
+#                          ^^^^^^ catppuccin mocha blue
 hyprctl reload
