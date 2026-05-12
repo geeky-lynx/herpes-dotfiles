@@ -1,8 +1,6 @@
 #!/usr/bin/bash
  
-grim_dir="~/Pictures/grim-screenshots"
-
-grim -c "$HOME/Pictures/grim-screenshots/grim-$(date +%d_%m_%Y-%H:%M:%S-%s).png"
+grim -c - | wl-copy # Copy to clipboard
 
 if (( $? != 0 )) then
   hyprctl notify 5 4500 "rgb(f38ba8)" " Full Screenshot failed :("
@@ -10,7 +8,7 @@ if (( $? != 0 )) then
   exit
 fi
 
-grim -c - | wl-copy # Copy to clipboard
+wl-paste > "$HOME/Pictures/grim-screenshots/grim-$(date +%d_%m_%Y-%H:%M:%S-%s).png"
 
 hyprctl notify 5 4500 "rgb(a6e3a1)" " Full Screenshot taken"
 #                          ^^^^^^ catppuccin mocha green
