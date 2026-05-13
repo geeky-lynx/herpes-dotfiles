@@ -5,7 +5,8 @@ hl.config({
     gaps_in = 5,
     gaps_out = 20,
     border_size = 2,
-    layout = "dwindle",
+    -- layout = "dwindle",
+    layout = "scrolling",
 
     -- Please see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Tearing/ before you turn this on
     allow_tearing = false
@@ -20,20 +21,20 @@ hl.config({
 
   -- See https://wiki.hypr.land/Configuring/Layouts/Dwindle-Layout/ for more
   dwindle = {
-    pseudotile = true,
+    -- pseudotile = true,
     preserve_split = true
   },
 
   -- See https://wiki.hypr.land/Configuring/Layouts/Master-Layout/ for more
-  -- master = {
-  --   new_is_master = true
-  -- }
+  master = {
+    -- new_is_master = true
+    new_status = "master"
+  },
 
   -- See https://wiki.hypr.land/Configuring/Layouts/Scrolling-Layout/ for more
-  -- hl.config({
-  --     scrolling = {
-  --         fullscreen_on_one_column = true,
-  --     },
-  -- })
+  scrolling = {
+    fullscreen_on_one_column = true,
+    direction = "down"
+  },
 })
 

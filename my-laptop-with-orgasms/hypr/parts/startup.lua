@@ -8,5 +8,5 @@ local function startup_proc()
   hl.exec_cmd("mkfifo /tmp/wobpipe; tail -f /tmp/wobpipe | wob")
 end
 
-hl.on("hyprland.start", startup_proc())
-hl.exec_cmd("~/Games/xava-x86_64.AppImage -p ~/.config/xava/config") -- This takes battery; not suitable power savings & high performanceÔ
+hl.on("hyprland.start", startup_proc)
+-- hl.exec_cmd("~/Games/xava-x86_64.AppImage -p ~/.config/xava/config") -- This takes battery; not suitable power savings & high performanceÔ

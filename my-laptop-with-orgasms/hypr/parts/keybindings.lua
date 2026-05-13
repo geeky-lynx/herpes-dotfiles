@@ -7,7 +7,7 @@
     -- - [ ] TODO: Fix last keybindings + check if all correct
     -- - [ ] TODO: Check for bindl, bindm, and shit
 
-require("./defaults")
+require("parts/defaults")
 
 -- Basic & advanced bindings
 hl.bind("ALT + TAB"               , hl.dsp.window.cycle_next())
@@ -23,7 +23,7 @@ hl.bind(main_mod .. " + SHIFT + L", hl.dsp.exec_cmd("wlogout"))
 hl.bind(main_mod .. " + SHIFT + X", hl.dsp.exec_cmd(screenshot_full))
 hl.bind(main_mod .. " +         X", hl.dsp.exec_cmd(screenshot_region))
 
-hl.bind(main_mod .. " +         F", hl.dsp.fullscreen({ action = "toggle" }))
+hl.bind(main_mod .. " +         F", hl.dsp.window.fullscreen({ action = "toggle" }))
 hl.bind(main_mod .. " +         P", hl.dsp.window.pin())
 hl.bind(main_mod .. " +         J", hl.dsp.layout("togglesplit")) -- dwindle
 -- hl.bind(main_mod .. " +         J", hl.dsp.layout("swapsplit")) -- dwindle
@@ -31,7 +31,7 @@ hl.bind(main_mod .. " +         U", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(main_mod .. " + SHIFT + U", hl.dsp.window.pseudo()) -- gonna dwindle
 
 -- Function (Fn) Media keybindings
-hl.bind(main_mod .. " + F2", exec, gamemode)
+hl.bind(main_mod .. " + F2",    hl.dsp.exec_cmd(gamemode))
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("pamixer --increase 5; echo $(pamixer --get-volume) > /tmp/wobpipe"), { locked = true })
 hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("pamixer --decrease 5; echo $(pamixer --get-volume) > /tmp/wobpipe"), { locked = true })
 hl.bind("XF86AudioMute",        hl.dsp.exec_cmd(toggle_speakers),        { locked = true })
@@ -55,8 +55,8 @@ hl.bind(main_mod .. " + SHIFT + TAB", hl.dsp.group.prev())
 -- Window specific bindings
     -- Move focus with main_mod + arrow keys
     -- Move windows with main_mod + Shift + arrow keys
-local directions = ["left", "right", "up", "down"]
-for _dir in directions do
+local directions = {"left", "right", "up", "down"}
+for _, _dir in ipairs(directions) do
   hl.bind(main_mod .. " +         " .. _dir, hl.dsp.focus({ direction = _dir }))
   hl.bind(main_mod .. " + SHIFT + " .. _dir, hl.dsp.window.move({ direction = _dir }))
 end
@@ -75,14 +75,21 @@ hl.bind(main_mod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:ma
 
 -- Mouse specific bindings
    -- Scroll through existing workspaces with main_mod + scroll
-hl.bind(main_mod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" })
-hl.bind(main_mod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" })
+hl.bind(main_mod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
+hl.bind(main_mod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
 
   -- Pg Up & Down
-hl.bind(main_mod .. " + page_down", hl.dsp.focus({ workspace = "e-1" })
-hl.bind(main_mod .. " + page_up",   hl.dsp.focus({ workspace = "e+1" })
+hl.bind(main_mod .. " + page_down", hl.dsp.focus({ workspace = "e-1" }))
+hl.bind(main_mod .. " + page_up",   hl.dsp.focus({ workspace = "e+1" }))
 
    -- Move/resize windows with main_mod + LMB/RMB and dragging
-hl.bind(main_mod .. " + mouse:272", hl.window.drag(), { mouse = true })
-hl.bind(main_mod .. " + mouse:273", hl.window.resize(), { mouse = true })
+hl.bind(main_mod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
+hl.bind(main_mod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
+
+
+
+-- test
+hl.bind(main_mod .. " + period", hl.dsp.layout("move +col"))
+hl.bind(main_mod .. " + SHIFT + period", hl.dsp.layout("move -col"))
+hl.bind(main_mod .. " + comma", hl.dsp.layout("swapcol l"))
